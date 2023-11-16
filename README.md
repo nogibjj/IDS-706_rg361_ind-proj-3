@@ -1,6 +1,6 @@
-# Data Pipeline in Databricks
+# Databricks ETL Pipeline
 
-[![CI](https://github.com/nogibjj/IDS-706_rg361_week-11/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/IDS-706_rg361_week-11/actions/workflows/cicd.yml)
+[![CI](https://github.com/nogibjj/IDS-706_rg361_ind-proj-3/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/IDS-706_rg361_ind-proj-3/actions/workflows/cicd.yml)
 
 This repositroy contains files to process data in ``Databricks`` using ``PySpark``, ``Python``  and ``SQL``
 
