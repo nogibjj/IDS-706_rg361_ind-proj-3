@@ -17,7 +17,7 @@ A Databricks ``workflow`` is setup to run the notbooks in sequence to simulate t
 
 ``Github`` actions automatically performs the ``CICD`` workflows whenever there is a change in the repository.
 
-![Schema](resources/schema.png)
+![Schema](resources/Schema.png)
 
 ## Instructions
 
@@ -34,7 +34,7 @@ We use the [Automotive]("https://github.com/Opensourcefordatascience/Data-sets/r
 ![Transform_Load](resources/nb_Transform_Load.png)
 
 3. ``Visualize``: This notebook reads the data from the processed table and generates a visualization of the data and also saves the visualization as a file in the repository
-![Visualiza](resources/nb_processing.png)
+![Visualize](resources/nb_Visualize.png)
 
 
 ## Workflows
@@ -50,6 +50,10 @@ Sucessful execution of Databricsk Workflow:
 ![Data Workflow](resources/workflow.png)
 
 **Note**: The workflow is set to be triggered automatically once a month to save costs.
+
+Generated Plot from Workflow:
+![Data Workflow](plot.png)
+
 
 ### CICD Workflow
 github actions are used to automate the following processes whenever a change is made to the files in the repository:
