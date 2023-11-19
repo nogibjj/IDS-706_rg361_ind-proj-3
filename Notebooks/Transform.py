@@ -1,5 +1,5 @@
 # Databricks notebook source
-#Import Required Packages and Libraries
+# Import Required Packages and Libraries
 from pyspark.sql import SparkSession
 from pyspark.sql.utils import AnalysisException
 
@@ -10,6 +10,7 @@ from pyspark.sql.utils import AnalysisException
 spark = SparkSession.builder.getOrCreate()
 
 # COMMAND ----------
+
 
 def validate_and_execute_query():
     try:
@@ -28,7 +29,7 @@ def validate_and_execute_query():
         # Validate result
         if result.rdd.isEmpty():
             raise ValueError("Query returned no results")
-        
+
         # Write the result to a Delta table
         result.write.format("delta").mode("overwrite").saveAsTable("cars_transformed")
 
@@ -41,6 +42,7 @@ def validate_and_execute_query():
         print(f"Data validation error: {e}")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
 
 # COMMAND ----------
 
