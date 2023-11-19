@@ -2,16 +2,16 @@
 
 [![CI](https://github.com/nogibjj/IDS-706_rg361_ind-proj-3/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/IDS-706_rg361_ind-proj-3/actions/workflows/cicd.yml)
 
-This repositroy contains files to process data in ``Databricks`` using ``PySpark``, ``Python``  and ``SQL``
+This repositroy contains files to perform ETL operations in ``Databricks`` using ``PySpark``, ``Python``, ``Delta Tables``  and ``SQL``
 
-The repo has been created from [Week-10 Mini-Project](https://github.com/nogibjj/IDS-706_rg361_week-10) and modified as per requirements.
+The base repo has been created from [Week-11 Mini-Project](https://github.com/nogibjj/IDS-706_rg361_week-11) and modified as per requirements.
 
-Created on on 08-Nov-2023
+Created on on 15-Nov-2023
 
 ## Overview
 
-This project performs a sample End-to-End Data Pipeline in Databricks.
-The sample data is loaded from Databricks and the notebooks used for processing are saved in this Github Repository in the ``Notebooks`` folder.
+This project performs a sample ETL operations in Databricks.
+The sample data is loaded from [Github]("https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv") and the notebooks used for processing are saved in this Github Repository in the ``Notebooks`` folder.
 
 A Databricks ``workflow`` is setup to run the notbooks in sequence to simulate the End-to-End workflow.
 
@@ -23,36 +23,33 @@ A Databricks ``workflow`` is setup to run the notbooks in sequence to simulate t
 
 The Primary data and operations happen in the Databricks platform.
 
-We use the ``million songs`` sample dataset available in databricks for this process.
+We use the [Automotive]("https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv") dataset from Github for this process.
 
-4 Notebooks have been created to perform the following tasks or steps in the pipeline:
+3 Notebooks have been created to perform the following tasks or steps in the pipeline:
 
-1. ``EDA``: To get an overview of the data, this is only exploratory in nature and is **NOT** a part of the Final Workflow
-![EDA](resources/nb_eda.png)
+1. ``Extract``: To load the raw data from the source and save it as a ``Delta Table`` in the workspace
+![Extract](resources/nb_Extract.png)
 
-2. ``Ingestion``: This notebook loads the data from the sample dataset and saves it as ``songs`` table in Databricks
-![EDA](resources/nb_ingestion.png)
+2. ``Transform_Load``: This notebook loads the data from the raw-data delta table and processes it and saves the result in a processed delta table
+![Transform_Load](resources/nb_Transform_Load.png)
 
-3. ``Preparation``: This notebook contains the SQL code to process the raw data in ``songs`` and stores it as ``songs_prepared`` in databricks.
-![EDA](resources/nb_processing.png)
-
-4. ``Analyze``: This notebook has some sample queries to view data from the ``songs_prepared`` dataset.
-![EDA](resources/nb_analyze.png)
+3. ``Visualize``: This notebook reads the data from the processed table and generates a visualization of the data and also saves the visualization as a file in the repository
+![Visualiza](resources/nb_processing.png)
 
 
 ## Workflows
-There are 2 workflows which happen in this project, the Data worflow which happens in Databricks and the CICD worflow which happens in Gtihub.
+There are 2 workflows which happen in this project, the ETL worflow which happens in Databricks and the CICD worflow which happens in Github.
 
-### Data Worflow
-A simple workflow ``Data_Workflow`` has been setup in Databricks which performs the following 3 actions using the corresponding notebooks as mentioned above:
-1. Ingestion
-2. Preparation
-3. Analyze
+### ETL Worflow
+A simple workflow ``Ind_Proj_3`` has been setup in Databricks which performs the following 3 actions using the corresponding notebooks as mentioned above:
+1. Extraction
+2. Transformation and Loading
+3. Visualization
 
 Sucessful execution of Databricsk Workflow:
 ![Data Workflow](resources/workflow.png)
 
-**Note**: The workflow is set to be manually triggered to save costs.
+**Note**: The workflow is set to be triggered automatically once a month to save costs.
 
 ### CICD Workflow
 github actions are used to automate the following processes whenever a change is made to the files in the repository:
@@ -87,9 +84,12 @@ The Github Repository Contains the following items:
    contains the ``dockerfile`` and ``devcontainer.json`` files which are used to build and define the setting of the virtual environment (codespaces - python) for running the codes.
 
 ### 6. Notebooks
-   The 4 notebooks which are mentioned earlier are stored in the ``Notebooks`` folder in this Github repository so as to have version control and CICD
+   The 3 notebooks which are mentioned earlier are stored in the ``Notebooks`` folder in this Github repository so as to have version control and CICD
 
-### 7. resources 
+### 7. plot.png
+   The output plot which is generated by the visualization step in the notebook
+
+### 8. resources 
    contains additonal files which are used in the README
 
 
