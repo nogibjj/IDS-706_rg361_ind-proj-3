@@ -11,7 +11,7 @@ Created on on 15-Nov-2023
 ## Overview
 
 This project performs a sample ETL operations in Databricks.
-The sample data is loaded from [Github]("https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv") and the notebooks used for processing are saved in this Github Repository in the ``Notebooks`` folder.
+The sample data is loaded from [Github](https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv) and the notebooks used for processing are saved in this Github Repository in the ``Notebooks`` folder.
 
 A Databricks ``workflow`` is setup to run the notbooks in sequence to simulate the End-to-End workflow.
 
@@ -23,7 +23,7 @@ A Databricks ``workflow`` is setup to run the notbooks in sequence to simulate t
 
 The Primary data and operations happen in the Databricks platform.
 
-We use the [Automotive]("https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv") dataset from Github for this process.
+We use the [Automotive](https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv) dataset from Github for this process.
 
 3 Notebooks have been created to perform the following tasks or steps in the pipeline:
 
