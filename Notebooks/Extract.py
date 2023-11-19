@@ -1,12 +1,12 @@
 # Databricks notebook source
-#Importing Required Packages and Libraries
+# Importing Required Packages and Libraries
 from pyspark.sql import SparkSession
 from delta.tables import DeltaTable
 import pandas as pd
 
 # COMMAND ----------
 
-#To Validate if the DF has Data and is loaded as a dataframe
+# To Validate if the DF has Data and is loaded as a dataframe
 def validate_data(data):
     if not isinstance(data, pd.DataFrame):
         raise ValueError("Data should be a pandas DataFrame")
@@ -14,7 +14,9 @@ def validate_data(data):
         raise ValueError("Data should not be empty")
     pass
 
+
 # COMMAND ----------
+
 
 def load_into_delta_lake(data, path):
     try:
@@ -31,11 +33,14 @@ def load_into_delta_lake(data, path):
     except Exception as e:
         print(f"An error occurred: {e}")
 
+
 # COMMAND ----------
 
 # Use the function
 try:
-    data = pd.read_csv("https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv")
+    data = pd.read_csv(
+        "https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv"
+    )
     load_into_delta_lake(data, "delta_table_cars")
 except Exception as e:
     print(f"An error occurred: {e}")
