@@ -54,6 +54,7 @@ Sucessful execution of Databricsk Workflow:
 **Note**: The workflow is set to be triggered automatically once a month to save costs.
 
 Generated Plot from Workflow:
+
 ![Data Workflow](plot.png)
 
 
