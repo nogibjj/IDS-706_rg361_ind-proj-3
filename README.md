@@ -4,6 +4,8 @@
 
 This repositroy contains files to perform ETL operations in ``Databricks`` using ``PySpark``, ``Python``, ``Delta Tables``  and ``SQL``
 
+Please watch the [Youtube Video](https://youtu.be/zHCgdnUn5V4) for a brief overview and a demo of ETL operations in Databricks Workspace.
+
 The base repo has been created from [Week-11 Mini-Project](https://github.com/nogibjj/IDS-706_rg361_week-11) and modified as per requirements.
 
 Created on on 15-Nov-2023
@@ -68,7 +70,12 @@ github actions are used to automate the following processes whenever a change is
 **Note** -if all the processes run successfully the following output will be visible in github actions:
    ![Success Build](resources/build.png)
 
-   
+
+## Error Handling
+
+Error handling and Data Validation is performed individually in every code and notebook. Errors are published with detailed descriptions wherever possible, and empty dataframes are flagged as well.
+
+
 ## Contents
 The Github Repository Contains the following items:
 
